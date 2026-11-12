@@ -1,0 +1,4 @@
+assumed_value_per_exposure_day,exposure_days_avoided,value_in_sample,value_per_10k_inspections
+0.5,2708.0,1354.0,1384.8828884115783
+2.0,2708.0,5416.0,5539.531553646313
+5.0,2708.0,13540.0,13848.828884115783

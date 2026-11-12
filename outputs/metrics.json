@@ -1,0 +1,655 @@
+{
+  "data": {
+    "inspections": 27600,
+    "licences": 12367,
+    "first_date": "2011-09-02",
+    "last_date": "2014-12-30",
+    "rows": {
+      "train": 13711,
+      "valid": 4112,
+      "test": 9777
+    },
+    "critical_rate": {
+      "train": 0.12384,
+      "valid": 0.12622,
+      "test": 0.15465
+    },
+    "features": 68,
+    "features_before_pruning": 68,
+    "dropped_families": [],
+    "history_agreement_with_city": {
+      "first_visit_agreement": 0.99967,
+      "prior_fail_agreement": 0.99993,
+      "rows": 27600
+    }
+  },
+  "profile": {
+    "overall": 0.13511,
+    "by_month": {
+      "1": 0.11501,
+      "2": 0.13558,
+      "3": 0.1319,
+      "4": 0.12826,
+      "5": 0.14776,
+      "6": 0.17237,
+      "7": 0.17937,
+      "8": 0.16456,
+      "9": 0.14624,
+      "10": 0.11626,
+      "11": 0.09545,
+      "12": 0.1058
+    },
+    "by_previous_critical_count": {
+      "0": {
+        "rate": 0.12888,
+        "inspections": 25706
+      },
+      "1": {
+        "rate": 0.1885,
+        "inspections": 1183
+      },
+      "2 or more": {
+        "rate": 0.27145,
+        "inspections": 711
+      }
+    },
+    "by_risk": {
+      "1": 0.1455,
+      "2": 0.10425,
+      "3": 0.0938
+    },
+    "restaurant": 0.14908,
+    "other_facilities": 0.10271,
+    "first_visit": 0.13898,
+    "repeat_visit": 0.13196
+  },
+  "selection": {
+    "chosen": "boosting",
+    "best": "random forest",
+    "losses": {
+      "logistic": 0.37452,
+      "boosting": 0.37171,
+      "random forest": 0.36997
+    },
+    "se_of_gap": {
+      "logistic": 0.00219,
+      "boosting": 0.00296,
+      "random forest": 0.0
+    },
+    "tolerance": 0.00296
+  },
+  "calibration": {
+    "method": "sigmoid",
+    "options": [
+      {
+        "method": "identity",
+        "log_loss": 0.31906,
+        "ece": 0.02336
+      },
+      {
+        "method": "sigmoid",
+        "log_loss": 0.3151,
+        "ece": 0.01831
+      },
+      {
+        "method": "isotonic",
+        "log_loss": 0.32042,
+        "ece": 0.01887
+      }
+    ]
+  },
+  "test": {
+    "point": {
+      "auc": 0.60787,
+      "pr_auc": 0.21519,
+      "log_loss": 0.42587,
+      "brier": 0.12913,
+      "ece": 0.02839,
+      "recall_top20": 0.30688,
+      "lift_top20": 1.53471
+    },
+    "auc": {
+      "value": 0.60787,
+      "lo": 0.59101,
+      "hi": 0.62284
+    },
+    "recall_top10": {
+      "value": 0.16733,
+      "lo": 0.15206,
+      "hi": 0.18423
+    },
+    "recall_top20": {
+      "value": 0.30688,
+      "lo": 0.28848,
+      "hi": 0.32882
+    },
+    "recall_top30": {
+      "value": 0.43254,
+      "lo": 0.40762,
+      "hi": 0.45809
+    },
+    "weekly_ranking": {
+      "ndcg@10": 0.26516,
+      "precision@10": 0.26667,
+      "map@50": 0.1189,
+      "mrr": 0.48566
+    },
+    "uncalibrated": {
+      "auc": 0.60787,
+      "pr_auc": 0.21519,
+      "log_loss": 0.43537,
+      "brier": 0.13093,
+      "ece": 0.04085,
+      "recall_top20": 0.30688,
+      "lift_top20": 1.53471
+    }
+  },
+  "baselines": {
+    "last_visit_rule": {
+      "point": {
+        "auc": 0.54956,
+        "pr_auc": 0.18368,
+        "log_loss": 2.09397,
+        "brier": 0.21988,
+        "ece": 0.21905,
+        "recall_top20": 0.27116,
+        "lift_top20": 1.3561
+      },
+      "auc": {
+        "value": 0.55064,
+        "lo": 0.53349,
+        "hi": 0.56923
+      },
+      "recall_top10": {
+        "value": 0.14881,
+        "lo": 0.13593,
+        "hi": 0.16377
+      },
+      "recall_top20": {
+        "value": 0.27116,
+        "lo": 0.25049,
+        "hi": 0.28945
+      },
+      "recall_top30": {
+        "value": 0.36045,
+        "lo": 0.34051,
+        "hi": 0.382
+      },
+      "weekly_ranking": {
+        "ndcg@10": 0.27905,
+        "precision@10": 0.24706,
+        "map@50": 0.11046,
+        "mrr": 0.58038
+      }
+    },
+    "random": {
+      "point": {
+        "auc": 0.50725,
+        "pr_auc": 0.15731,
+        "log_loss": 0.9931,
+        "brier": 0.33273,
+        "ece": 0.3631,
+        "recall_top20": 0.19974,
+        "lift_top20": 0.99888
+      },
+      "auc": {
+        "value": 0.50725,
+        "lo": 0.48877,
+        "hi": 0.52504
+      },
+      "recall_top10": {
+        "value": 0.10384,
+        "lo": 0.08832,
+        "hi": 0.11765
+      },
+      "recall_top20": {
+        "value": 0.19974,
+        "lo": 0.18097,
+        "hi": 0.21884
+      },
+      "recall_top30": {
+        "value": 0.29233,
+        "lo": 0.26713,
+        "hi": 0.31603
+      },
+      "weekly_ranking": {
+        "ndcg@10": 0.15628,
+        "precision@10": 0.16471,
+        "map@50": 0.06285,
+        "mrr": 0.30153
+      }
+    }
+  },
+  "test_all_models": {
+    "static logistic": {
+      "auc": 0.55673,
+      "pr_auc": 0.17385,
+      "log_loss": 0.43088,
+      "brier": 0.13071,
+      "ece": 0.03233,
+      "recall_top20": 0.22354,
+      "lift_top20": 1.11795
+    },
+    "logistic": {
+      "auc": 0.62091,
+      "pr_auc": 0.23936,
+      "log_loss": 0.42857,
+      "brier": 0.1298,
+      "ece": 0.03673,
+      "recall_top20": 0.32937,
+      "lift_top20": 1.64716
+    },
+    "random forest": {
+      "auc": 0.61411,
+      "pr_auc": 0.23619,
+      "log_loss": 0.4211,
+      "brier": 0.12761,
+      "ece": 0.0216,
+      "recall_top20": 0.32738,
+      "lift_top20": 1.63724
+    },
+    "boosting": {
+      "auc": 0.60787,
+      "pr_auc": 0.21519,
+      "log_loss": 0.43537,
+      "brier": 0.13093,
+      "ece": 0.04085,
+      "recall_top20": 0.30688,
+      "lift_top20": 1.53471
+    },
+    "boosting balanced": {
+      "auc": 0.60525,
+      "pr_auc": 0.21527,
+      "log_loss": 0.602,
+      "brier": 0.20711,
+      "ece": 0.2522,
+      "recall_top20": 0.29365,
+      "lift_top20": 1.46855
+    }
+  },
+  "bands": {
+    "cutoffs": {
+      "usual": 0.10517,
+      "elevated": 0.14402,
+      "high": 0.19651
+    },
+    "table": [
+      {
+        "band": "lower than usual",
+        "inspections": 3911,
+        "critical_rate": 0.10995
+      },
+      {
+        "band": "about usual",
+        "inspections": 2933,
+        "critical_rate": 0.14593
+      },
+      {
+        "band": "elevated",
+        "inspections": 1955,
+        "critical_rate": 0.20512
+      },
+      {
+        "band": "high",
+        "inspections": 978,
+        "critical_rate": 0.25869
+      }
+    ]
+  },
+  "leak_audit": {
+    "as-of neighbours": 0.60787,
+    "neighbours from the whole table": 0.58984,
+    "shuffled 5-fold on all years": 0.66867,
+    "with the same visit's serious and minor counts": 0.69906
+  },
+  "ablation": [
+    {
+      "dropped_family": "last visit's violations",
+      "auc_without": 0.58965,
+      "auc_loss": 0.01822,
+      "auc_loss_lo": 0.01033,
+      "auc_loss_hi": 0.02493,
+      "recall20_loss": 0.02249,
+      "recall20_lo": 0.00758,
+      "recall20_hi": 0.04036
+    },
+    {
+      "dropped_family": "season and weather",
+      "auc_without": 0.59347,
+      "auc_loss": 0.01439,
+      "auc_loss_lo": 0.00441,
+      "auc_loss_hi": 0.02463,
+      "recall20_loss": 0.03108,
+      "recall20_lo": 0.01454,
+      "recall20_hi": 0.05334
+    },
+    {
+      "dropped_family": "neighbourhood",
+      "auc_without": 0.59616,
+      "auc_loss": 0.0117,
+      "auc_loss_lo": 0.00097,
+      "auc_loss_hi": 0.02039,
+      "recall20_loss": 0.03241,
+      "recall20_lo": 0.00977,
+      "recall20_hi": 0.05837
+    },
+    {
+      "dropped_family": "facility type and risk",
+      "auc_without": 0.59852,
+      "auc_loss": 0.00935,
+      "auc_loss_lo": -0.00135,
+      "auc_loss_hi": 0.01899,
+      "recall20_loss": 0.00728,
+      "recall20_lo": -0.0039,
+      "recall20_hi": 0.03008
+    },
+    {
+      "dropped_family": "visit history",
+      "auc_without": 0.60599,
+      "auc_loss": 0.00188,
+      "auc_loss_lo": -0.00577,
+      "auc_loss_hi": 0.01061,
+      "recall20_loss": -0.00265,
+      "recall20_lo": -0.01832,
+      "recall20_hi": 0.01628
+    },
+    {
+      "dropped_family": "location",
+      "auc_without": 0.62781,
+      "auc_loss": -0.01994,
+      "auc_loss_lo": -0.03067,
+      "auc_loss_hi": -0.00995,
+      "recall20_loss": -0.02249,
+      "recall20_lo": -0.04172,
+      "recall20_hi": 2e-05
+    }
+  ],
+  "validation_ablation": [
+    {
+      "dropped_family": "facility type and risk",
+      "auc_without": 0.60911,
+      "auc_loss": 0.02752,
+      "auc_loss_lo": 0.01309,
+      "auc_loss_hi": 0.03921,
+      "recall20_loss": -0.00385,
+      "recall20_lo": -0.01982,
+      "recall20_hi": 0.03822
+    },
+    {
+      "dropped_family": "neighbourhood",
+      "auc_without": 0.61918,
+      "auc_loss": 0.01745,
+      "auc_loss_lo": 0.00055,
+      "auc_loss_hi": 0.03591,
+      "recall20_loss": 0.01734,
+      "recall20_lo": -0.01579,
+      "recall20_hi": 0.06179
+    },
+    {
+      "dropped_family": "visit history",
+      "auc_without": 0.62347,
+      "auc_loss": 0.01316,
+      "auc_loss_lo": -0.00035,
+      "auc_loss_hi": 0.02615,
+      "recall20_loss": 0.00578,
+      "recall20_lo": -0.014,
+      "recall20_hi": 0.03194
+    },
+    {
+      "dropped_family": "location",
+      "auc_without": 0.62366,
+      "auc_loss": 0.01297,
+      "auc_loss_lo": -0.00263,
+      "auc_loss_hi": 0.02839,
+      "recall20_loss": 0.01349,
+      "recall20_lo": -0.0101,
+      "recall20_hi": 0.05411
+    },
+    {
+      "dropped_family": "last visit's violations",
+      "auc_without": 0.62859,
+      "auc_loss": 0.00804,
+      "auc_loss_lo": -0.00222,
+      "auc_loss_hi": 0.01813,
+      "recall20_loss": -0.01349,
+      "recall20_lo": -0.03075,
+      "recall20_hi": 0.01275
+    },
+    {
+      "dropped_family": "season and weather",
+      "auc_without": 0.6357,
+      "auc_loss": 0.00093,
+      "auc_loss_lo": -0.01523,
+      "auc_loss_hi": 0.01827,
+      "recall20_loss": -0.01541,
+      "recall20_lo": -0.05185,
+      "recall20_hi": 0.03131
+    }
+  ],
+  "inspector": {
+    "table": [
+      {
+        "inspector": "brown",
+        "inspections": 448,
+        "critical_rate": 0.02232,
+        "expected_rate": 0.11105,
+        "obs_over_exp": 0.201,
+        "lo": 0.10336,
+        "hi": 0.32778
+      },
+      {
+        "inspector": "yellow",
+        "inspections": 790,
+        "critical_rate": 0.07595,
+        "expected_rate": 0.12664,
+        "obs_over_exp": 0.59974,
+        "lo": 0.4706,
+        "hi": 0.7272
+      },
+      {
+        "inspector": "green",
+        "inspections": 1000,
+        "critical_rate": 0.104,
+        "expected_rate": 0.137,
+        "obs_over_exp": 0.75911,
+        "lo": 0.6048,
+        "hi": 0.93433
+      },
+      {
+        "inspector": "orange",
+        "inspections": 980,
+        "critical_rate": 0.15,
+        "expected_rate": 0.1018,
+        "obs_over_exp": 1.47347,
+        "lo": 1.26295,
+        "hi": 1.68314
+      },
+      {
+        "inspector": "blue",
+        "inspections": 1155,
+        "critical_rate": 0.22424,
+        "expected_rate": 0.12457,
+        "obs_over_exp": 1.80016,
+        "lo": 1.62131,
+        "hi": 1.99423
+      },
+      {
+        "inspector": "purple",
+        "inspections": 272,
+        "critical_rate": 0.43015,
+        "expected_rate": 0.15468,
+        "obs_over_exp": 2.78092,
+        "lo": 2.43316,
+        "hi": 3.12956
+      }
+    ],
+    "homogeneity_test": {
+      "chi2": 325.11693,
+      "p_value": 0.0,
+      "dof": 5,
+      "rows": 4645
+    }
+  },
+  "inspector_ablation": {
+    "auc_without_inspector": 0.59791,
+    "auc_with_inspector": 0.71577,
+    "rows_test": 4645
+  },
+  "rate_segments": [
+    {
+      "from": "2011-09-05",
+      "to": "2012-06-04",
+      "weeks": 38,
+      "critical_rate": 0.11233
+    },
+    {
+      "from": "2012-06-11",
+      "to": "2012-10-22",
+      "weeks": 19,
+      "critical_rate": 0.15842
+    },
+    {
+      "from": "2012-10-29",
+      "to": "2013-04-22",
+      "weeks": 25,
+      "critical_rate": 0.10489
+    },
+    {
+      "from": "2013-04-29",
+      "to": "2013-09-09",
+      "weeks": 20,
+      "critical_rate": 0.15836
+    },
+    {
+      "from": "2013-09-16",
+      "to": "2014-02-03",
+      "weeks": 19,
+      "critical_rate": 0.10931
+    },
+    {
+      "from": "2014-02-10",
+      "to": "2014-09-22",
+      "weeks": 33,
+      "critical_rate": 0.17236
+    },
+    {
+      "from": "2014-09-29",
+      "to": "2014-12-15",
+      "weeks": 12,
+      "critical_rate": 0.11254
+    }
+  ],
+  "refit": {
+    "frozen_auc": 0.60787,
+    "refit_auc": 0.63467,
+    "frozen_recall20": 0.30688,
+    "refit_recall20": 0.34656
+  },
+  "extras": {
+    "rows": {
+      "train": 10927,
+      "valid": 3757,
+      "test": 4028
+    },
+    "without extras": {
+      "auc": 0.57048,
+      "recall20": 0.261
+    },
+    "with extras": {
+      "auc": 0.58483,
+      "recall20": 0.2868
+    },
+    "auc_gain": {
+      "value": 0.01435,
+      "lo": 0.00358,
+      "hi": 0.02623
+    }
+  },
+  "schedule": {
+    "horizon": 28,
+    "max_delay": 7,
+    "headline": {
+      "days_saved_per_critical": 1.79101,
+      "lo": 1.28257,
+      "hi": 2.29416
+    },
+    "policies": {
+      "model": {
+        "horizon": 28,
+        "max_delay": 7,
+        "days_saved_per_critical": 1.79101,
+        "exposure_days_avoided": 2708.0,
+        "mean_days_later_noncritical": 0.32765,
+        "share_moved_later": 0.57584,
+        "criticals": 1512,
+        "overflow": 0
+      },
+      "last-visit rule": {
+        "horizon": 28,
+        "max_delay": 7,
+        "days_saved_per_critical": 1.1131,
+        "exposure_days_avoided": 1683.0,
+        "mean_days_later_noncritical": 0.20363,
+        "share_moved_later": 0.57697,
+        "criticals": 1512,
+        "overflow": 0
+      },
+      "random": {
+        "horizon": 28,
+        "max_delay": 7,
+        "days_saved_per_critical": 0.03571,
+        "exposure_days_avoided": 54.0,
+        "mean_days_later_noncritical": 0.00653,
+        "share_moved_later": 0.5829,
+        "criticals": 1512,
+        "overflow": 0
+      },
+      "oracle": {
+        "horizon": 28,
+        "max_delay": 7,
+        "days_saved_per_critical": 11.71362,
+        "exposure_days_avoided": 17711.0,
+        "mean_days_later_noncritical": 2.14289,
+        "share_moved_later": 0.57901,
+        "criticals": 1512,
+        "overflow": 0
+      }
+    }
+  },
+  "economics": {
+    "visit_cost_assumed": 150.0,
+    "visits_saved_to_reach_half_of_criticals": 1320.0,
+    "visit_saving_dollars": 198000.0,
+    "criticals_per_100_visits_top30": {
+      "model": 22.29799,
+      "random": 15.46487
+    },
+    "exposure_days_avoided": 2708.0,
+    "inspections": 9777,
+    "value_table": [
+      {
+        "assumed_value_per_exposure_day": 0.5,
+        "exposure_days_avoided": 2708.0,
+        "value_in_sample": 1354.0,
+        "value_per_10k_inspections": 1384.88289
+      },
+      {
+        "assumed_value_per_exposure_day": 2.0,
+        "exposure_days_avoided": 2708.0,
+        "value_in_sample": 5416.0,
+        "value_per_10k_inspections": 5539.53155
+      },
+      {
+        "assumed_value_per_exposure_day": 5.0,
+        "exposure_days_avoided": 2708.0,
+        "value_in_sample": 13540.0,
+        "value_per_10k_inspections": 13848.82888
+      }
+    ],
+    "share_of_list_for_half_of_criticals": {
+      "model": 0.36218,
+      "last_visit_rule": 0.45147,
+      "random": 0.49719
+    }
+  }
+}
