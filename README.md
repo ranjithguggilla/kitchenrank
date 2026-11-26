@@ -206,7 +206,7 @@ City extras. About two thirds of rows carry business-licence flags, business age
 
 ## Installation
 
-Python 3.11 or newer. Developed on 3.13.
+Python 3.12 or newer. Developed on 3.13.
 
 ```bash
 git clone https://github.com/ranjithguggilla/kitchenrank.git

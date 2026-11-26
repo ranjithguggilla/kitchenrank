@@ -7,7 +7,7 @@ name = "kitchenrank"
 version = "0.1.0"
 description = "Rank scheduled food-safety inspections by the chance of a critical violation and measure what re-ordering buys"
 readme = "README.md"
-requires-python = ">=3.11"
+requires-python = ">=3.12"
 license = { text = "MIT" }
 authors = [{ name = "Ranjith Guggilla", email = "ranjithguggilla668@gmail.com" }]
 dependencies = [
